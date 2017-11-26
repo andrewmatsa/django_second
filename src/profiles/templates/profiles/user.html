@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block head_title %}{{ user.username }} | {{ block.super}}{% endblock head_title %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+    <h1>Profile</h1>
+
+    <p>{{ user.username }}</p>
+    <p>User: {{ user.get_username }}</p>
+    <p>User: {{ user.get_username }}</p>
+    <p>Phone: {{user.profile.phone_number}}
+    <li><a href="{% url 'logout'%}?next={{login}}">Logout</a></li>
+{% else %}
+    <p>1</p>
+    <p>2</p>
+    <h4>You are not logged in</h4>
+{% endif %}
+</hr>
+
+
+    </div>
+  </div>
+{% endblock %}
